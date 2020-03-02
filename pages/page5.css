@@ -1,0 +1,13 @@
+#test_result_text {
+    opacity: 0;
+    font-size: 24px;
+}
+
+#test_result_out {
+    width: 44px;
+    height: 40px;
+    opacity: 0;
+    font-size: 24px;
+    text-align: center;
+    padding: 0;
+}

@@ -1,0 +1,29 @@
+/* ------------------------------------------------------- */
+/* --------------- Приветственная страница --------------- */
+/* ------------------------------------------------------- */
+#well_page {
+    width: 90%;
+    height: 80%;
+    margin: 0 auto auto;
+    /*display: flex;
+    flex-direction: column;*/
+    /* Убрать */
+    border-radius: 5px;
+    background: rgba(62, 71, 79, .5);
+}
+#well_page #what_the_beast{
+    font-size: 32px;
+}
+#well_page > h1 {
+    font-size: 20px;
+    text-align: center;
+    /*flex: 8;*/
+}
+
+#subcribe_button {
+    width: 20%;
+    height: 10%;
+    /*flex: 1;*/
+    position: absolute;
+    margin: 100px 35% -125px;
+}

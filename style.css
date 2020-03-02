@@ -1,0 +1,194 @@
+/*  ===========================================================  Боди без отступов */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*  ===========================================================  Контент (2-15) */
+.content{
+    width: 820px;
+    height: 75%;
+    position: absolute;
+    top: 90px;
+    z-index: 800;
+    border-radius: 5px;
+    background: rgba(62, 71, 79, .9);
+    box-shadow: 0 .5em 1em #111;
+    padding: 0 40px 0;
+}
+.content .header{
+    width: 820px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+}
+/*  ===========================================================  Слайдер */
+.wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background-image: url('img/ship.png');
+    display: flex;
+    justify-content: center;
+}
+/* Панель навигации */
+.wrap header {
+    width: 900px;
+    height: 68px;
+    background: #3e474f;
+    box-shadow: 0 .5em 1em #111;
+    position: absolute;
+    z-index: 900;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.wrap header label {
+    color: #f8ffff;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 4.25em;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0 2em;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.wrap header label:hover {
+    background: #2e353b;
+}
+/* Слайды */
+.slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    padding: 10em 0 0;
+    background-color: #120103;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: left 0s .65s;
+    display: flex;
+    justify-content: center;
+}
+#slide_1 {
+    background-image: url('img/slider1.jpg');
+}
+#slide_2 {
+    background-image: url('img/slider2.jpg');
+}
+#slide_3 {
+    background-image: url('img/slider3.jpg');
+}
+#slide_4 {
+    background-image: url('img/slider4.jpg');
+}
+#slide_5 {
+    background-image: url('img/slider5.jpg');
+}
+/* Вывод слайда на бэкграунд */
+.left_slide{
+    left: 0;
+    z-index: 100;
+    transition: left .65s ease-out;
+}
+.down_slide{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .5s .5s;
+}
+.up_slide{
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .5s .5s;
+}
+
+/*  ===========================================================  Стандартная кнопка */
+.GrayButton {
+    cursor: pointer;
+    display: inline-block;
+    color: #3e474f;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    font-size: 20px;
+}
+.GrayButton:hover {
+    background: #2e353b;
+    color: #f8ffff;
+    transition: color .5s, background .5s;
+}
+.GrayButton:active {
+    background: #3e474f;
+    transition: background .5s;
+}
+
+/*  ===========================================================  Стандартный ввод */
+.group {
+    position: relative;
+    margin-bottom: 30px;
+    float: left;
+    padding-right: 5px;
+}
+.group input {
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.group input:focus {
+    outline: none;
+}
+.group label {
+    color: #999;
+    font-size: 24px;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.group input:focus ~ label, .group input:valid ~ label {
+    top: -40px;
+    font-size: 30px;
+    color: #999;
+}
+.group .bar {
+    position: relative;
+    display: block;
+    width: 120px;
+}
+.group .bar:before, .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.group .bar:before {
+    left: 50%;
+}
+.group .bar:after {
+    right: 50%;
+}
+.group input:focus ~ .bar:before, .group input:focus ~ .bar:after {
+    width: 50%;
+}

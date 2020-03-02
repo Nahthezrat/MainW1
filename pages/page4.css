@@ -1,0 +1,11 @@
+#table_order {
+    display: flex;
+    justify-content: center;
+}
+
+#slide_4 .article b {
+    margin-top: 40px;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+}

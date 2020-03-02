@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Имперский</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="pages/identification_form.css">
+    <link rel="stylesheet" type="text/css" href="pages/page1.css">
+    <link rel="stylesheet" type="text/css" href="pages/page2.css">
+    <link rel="stylesheet" type="text/css" href="pages/page3.css">
+    <link rel="stylesheet" type="text/css" href="pages/page4.css">
+    <link rel="stylesheet" type="text/css" href="pages/page5.css">
+</head>
+
+<body>
+<div class="wrap">
+    <header class="up_slide" id="header_menu">
+        <label for="1">Начало</label>
+        <label for="2">Уравнение</label>
+        <label for="3">Массив</label>
+        <label for="4">О картинах</label>
+        <label for="5">Тестирование</label>
+    </header>
+
+    <!-- Форма идентификации -->
+    <div id="darkness">
+        <div class="form-popup" id="myForm">
+            <form class="form-container" method="POST">
+                <h1>Подписаться</h1>
+
+                <label><b>Имя</b></label>
+                <input type="text" placeholder="Ваше имя" name="name" required>
+
+                <label><b>Е-мейл</b></label>
+                <input type="text" placeholder="Ваш е-мейл" name="email" required>
+
+                <button type="submit" class="btn" onclick="sendForm()">Отправить</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+            </form>
+        </div>
+    </div>
+
+    <input id="1" type="radio" onclick="slide(this)" name="menuButtons">
+    <section class="slide left_slide" id="slide_1">
+        <!-- PAGE 1 -->
+        <div id="well_page">
+            <h1 id="what_the_beast">Отгадайте, что за зверь?</h1>
+            <h1>Утром он сердит, когтист, зубаст, смел и полон амбиций, и берёт всё, что считает своим.<br><br>В полдень он возлегает на куче своих сокровищ, миролюбив и мудр, но не менее силён и смел, чем прежде.<br><br>Когда солнце клонится к закату, он теряет разум, тратит все свои сокровища, забывает и мудрость, и силу, и храброе сердце, и живёт только ради удовольствий.<br><br>А когда наступает ночь, он корчится в агонии, гния заживо.<br><br>Но если за ночь его не сожрут ни хищники, ни черви-трупоеды, то холодным утром, на рассвете, он исцеляется, заново обретая и молодость, и силу.<br><br><br>Так что это за зверь?</h1>
+            <button onclick="openForm()" class="GrayButton" id="subcribe_button">Подпишитесь</button>
+        </div>
+    </section>
+
+    <input id="2" type="radio" onclick="slide(this)" name="menuButtons">
+    <section class="slide" id="slide_2">
+        <!-- PAGE 2 -->
+        <div class="content" id="content-2">
+            <div class="header">
+                <h1>3.	Любое натуральное число можно представить в виде суммы нескольких последовательных натуральных чисел. Например, число 25 можно представить в виде суммы из одного (25), двух (12+13) или пяти (3+4+5+6+7) чисел. Написать программу, которая определит максимальное количество чисел в таком разложении.</h1>
+            </div>
+            <br><br><br><br><br>
+            <form name="quadratic" class="article" id="square-input">
+                <h1>Введите натуральное число: </h1>
+                <div class="group">
+                    <input type="text" name="A" required>
+                    <span class="bar"></span>
+                    <label>a</label>
+                </div>
+                <input type="button" id="sqare_button" class="GrayButton" value="Представить">
+            </form>
+
+            <p id="output"></p>
+        </div>
+    </section>
+
+    <input id="3" type="radio" onclick="slide(this)" name="menuButtons">
+    <section class="slide" id="slide_3">
+        <!-- PAGE 3 -->
+        <div class="content" id="content-3">
+            <div class="array_flexbox">
+                <form name="array" id="array_input">
+                    <h1>Игры с массивом</h1>
+                    <div class="group">
+                        <input type="text" id="new_element" required>
+                        <span class="bar"></span>
+                        <label>Next Element</label>
+                    </div>
+                    <input type="button" class="GrayButton" id="add_element" value="Добавить">
+                </form>
+
+                <div class="array_operations">
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="clear_array" value="Очистить массив">
+                        <label class="group_label" id="clear_array_label">Очищен</label>
+                    </div>
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="max_element" value="Максимальный элемент">
+                        <label class="group_label" id="max_element_label">Максимальный</label>
+                    </div>
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="min_element" value="Минимальный элемент">
+                        <label class="group_label" id="min_element_label">Минимальный</label>
+                    </div>
+
+
+                </div>
+
+                <div class="array_operations">
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="elements_num" value="Количество элементов">
+                        <label class="group_label" id="elements_num_label">Количество</label>
+                    </div>
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="elements_sum" value="Сумма элементов">
+                        <label class="group_label" id="elements_sum_label">Сумма</label>
+                    </div>
+                    <div class="group_button">
+                        <input type="button" class="GrayButton" id="mid_elements" value="Среднее арифметическое">
+                        <label class="group_label" id="mid_elements_label">Среднее</label>
+                    </div>
+                </div>
+
+                <div id="array_output">
+                    <h1 id="array_output_h1"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <input id="4" type="radio" onclick="slide(this)" name="menuButtons">
+    <section class="slide" id="slide_4">
+        <!-- PAGE 4 -->
+        <div class="content" id="content-4">
+            <div class="header">
+                <h1>О картинах</h1>
+            </div>
+            <div class="article">
+                <table id="table_order" border="1" cellpadding="10" cellspacing="1">
+                    <tbody><tr>
+                        <td rowspan="2"><a href="img/slider1.jpg" class="image"><img alt="Cole Thomas The Course of Empire The Savage State 1836.jpg" src="img/slider1.jpg" decoding="async" width="200" height="124" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cole_Thomas_The_Course_of_Empire_The_Savage_State_1836.jpg/300px-Cole_Thomas_The_Course_of_Empire_The_Savage_State_1836.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cole_Thomas_The_Course_of_Empire_The_Savage_State_1836.jpg/400px-Cole_Thomas_The_Course_of_Empire_The_Savage_State_1836.jpg 2x" data-file-width="8880" data-file-height="5520" /></a>
+                        </td>
+                        <td style="height:5px;">
+                        </td>
+                        <td rowspan="2"><a href="img/slider1.jpg" class="image"><img alt="Cole Thomas The Course of Empire Destruction 1836.jpg" src="img/slider4.jpg" decoding="async" width="200" height="124" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg/300px-Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg/400px-Cole_Thomas_The_Course_of_Empire_Destruction_1836.jpg 2x" data-file-width="8917" data-file-height="5532" /></a>
+                        </td></tr>
+                    <tr>
+                        <td rowspan="2"><a href="img/slider1.jpg" class="image"><img alt="Cole Thomas The Consummation The Course of the Empire 1836.jpg" src="img/slider3.jpg" decoding="async" width="220" height="149" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg/330px-Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg/440px-Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg 2x" data-file-width="7784" data-file-height="5277" /></a>
+                        </td></tr>
+                    <tr>
+                        <td rowspan="2"><a href="img/slider1.jpg" class="image"><img alt="Cole Thomas The Course of Empire The Arcadian or Pastoral State 1836.jpg" src="img/slider2.jpg" decoding="async" width="200" height="125" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg/300px-Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg/400px-Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg 2x" data-file-width="8733" data-file-height="5442" /></a>
+                        </td>
+                        <td rowspan="2"><a href="img/slider1.jpg" class="image"><img alt="Cole Thomas The Course of Empire Desolation 1836.jpg" src="img/slider5.jpg" decoding="async" width="200" height="124" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/300px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/400px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg 2x" data-file-width="8881" data-file-height="5526" /></a>
+                        </td></tr>
+                    <tr>
+                        <td style="height:70px;">
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <b>
+                    «Путь империи» (англ. The Course of Empire) — серия из пяти картин американского художника Томаса Коула, написанных в 1833—1836 гг. В ней переданы чувства, распространённые в американском обществе того времени, когда многие считали пасторализм идеальным этапом развития человечества, а идею империи ассоциировали с алчностью и неизбежным разложением. Коул неоднократно обращался к теме циклов — другим примером может служить его серия картин «Путешествие жизни».
+                </b>
+                <b>
+                    Серия была приобретена Нью-Йоркским историческим обществом в 1858 году в подарок для Нью-Йоркской галереи изящных искусств и включает следующие полотна: «Путь империи. Первобытное состояние», «Путь империи. Аркадия или Пастораль», «Путь империи. Расцвет», «Путь империи. Крушение» и «Путь империи. Запустение».
+                    На картинах изображены взлёт и падение воображаемого города, расположенного в нижнем конце речной долины, где река впадает в морскую бухту. Долину легко узнать на всех полотнах, в частности, благодаря необычной особенности — большому камню, который неустойчиво покоится на вершине утёса, нависающего над долиной. Некоторые критики считают, что эта черта символизирует контраст между неизменностью земли и мимолётностью человека.
+                </b>
+            </div>
+        </div>
+    </section>
+
+    <input id="5" type="radio" onclick="slide(this)" name="menuButtons">
+    <section class="slide" id="slide_5">
+        <!-- PAGE 5 -->
+        <div class="content" id="content-5">
+
+            <div class="header">
+                <h1>Проверьте свои знания</h1>
+            </div>
+            <div class="article">
+                <form>
+                    <p>Город Рим был назван в честь первого царя:<br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Рема</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="1">
+                            Ромула</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Рамзеса</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Рамы</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Равелия</label>
+                    </p>
+
+                    <p>Любимое зрелище римлян:<br>
+                        <label>
+                            <input type="radio" name="myname" value="1">
+                            Гладиаторские бои</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Театральные представления</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Олимпийские игры</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Конные состязания</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="myname" value="0">
+                            Римская борьба</label>
+                    </p>
+
+                    <label for="select">В честь военных побед полководцев в Риме возводились:</label><br>
+                    <select name="street" id="select">
+                        <option value="0"></option>
+                        <option value="0">Акведуки</option>
+                        <option value="0">Термы</option>
+                        <option value="0">Колонны</option>
+                        <option value="1">Арки</option>
+                        <option value="0">Акрополи</option>
+                    </select>
+
+                    <p>При императоре Траяне:<br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="1">
+                            Прекратились казни по ложным доносам</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Увеличились налоги и злоупотребления наместников</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Знатные провинциалы получила права римского гражданина</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Поощрялись доносчики, им доставалась часть имущества казнённого</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="1">
+                            Построены величайший в истории Рима комплекс терм (бань)</label>
+                        <br>
+                    </p>
+
+                    <p>Октавиан Август был пожизненным:<br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Народным трибуном</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="1">
+                            Консулом</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="1">
+                            Диктатором</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Сенатором</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="precipitation[]" value="0">
+                            Императором</label>
+                        <br>
+                    </p>
+                    <p>
+                        <input type="button" class="GrayButton" id="calc" value="Подсчитать результаты">
+                        <input type="reset" class="GrayButton" id="reset" value="Сброс">
+                        <input type="text" id="test_result_out" name="result" readonly>
+                        <b id="test_result_text">: ВАШ РЕЗУЛЬТАТ</b>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+    /* Игры с массивом */
+    function output_reset(){
+        document.getElementById("elements_num_label").classList.remove("group_label_show");
+        document.getElementById("min_element_label").classList.remove("group_label_show");
+        document.getElementById("max_element_label").classList.remove("group_label_show");
+        document.getElementById("elements_sum_label").classList.remove("group_label_show");
+        document.getElementById("mid_elements_label").classList.remove("group_label_show");
+
+        document.getElementById("elements_num").classList.remove("active_button");
+        document.getElementById("min_element").classList.remove("active_button");
+        document.getElementById("max_element").classList.remove("active_button");
+        document.getElementById("elements_sum").classList.remove("active_button");
+        document.getElementById("mid_elements").classList.remove("active_button");
+
+        document.getElementById('elements_num').value = "Количество элементов";
+        document.getElementById('max_element').value = "Максимальный элемент";
+        document.getElementById('min_element').value = "Минимальный элемент";
+        document.getElementById('elements_sum').value = "Сумма элементов";
+        document.getElementById('mid_elements').value = "Среднее арифметическое";
+    }
+    function print_array(){
+        if(localStorage.getItem('array') !== null) {
+            document.getElementById("array_output").style.display = "block";
+            let array = JSON.parse(localStorage.getItem('array'));
+            document.getElementById('array_output_h1').innerHTML = "";
+            for (let i = 0; i < array.length; ++i) {
+                document.getElementById('array_output_h1').innerHTML += array[i] + "\t";
+            }
+        }
+        else{
+            document.getElementById("array_output").style.display = "none";
+        }
+    }
+    function isEmpty(str) {
+        return (typeof str === "undefined" || str === null || str ===  "");
+    }
+    add_element.onclick = function(){
+        let array, input;
+
+        if(localStorage.getItem('array') !== null){
+            array = JSON.parse(localStorage.getItem('array'));
+        }
+        else{
+            array = [];
+        }
+
+        input = document.getElementById('new_element').value;
+        if(!isNaN(input) && input % 1 === 0 && !isEmpty(input)){
+            array[array.length] = input;
+            localStorage.setItem('array', JSON.stringify(array));
+
+            output_reset();
+            print_array();
+        }
+
+    }
+    clear_array.onclick = function(){
+        localStorage.removeItem('array');
+        document.getElementById('array_output_h1').innerHTML = "";
+
+        document.getElementById("array_output").style.display = "none";
+        output_reset();
+    }
+    elements_num.onclick = function(){
+        if(localStorage.getItem('array') !== null) {
+            let array = JSON.parse(localStorage.getItem('array'));
+
+            document.getElementById("elements_num_label").classList.add("group_label_show");
+            document.getElementById("elements_num").classList.add("active_button");
+            document.getElementById('elements_num').value = array.length;
+        }
+    }
+    min_element.onclick = function(){
+        if(localStorage.getItem('array') !== null) {
+            let array = JSON.parse(localStorage.getItem('array'));
+
+            document.getElementById("min_element_label").classList.add("group_label_show");
+            document.getElementById("min_element").classList.add("active_button");
+            document.getElementById('min_element').value = Math.min.apply(null, array);
+        }
+    }
+    max_element.onclick = function(){
+        if(localStorage.getItem('array') !== null) {
+            let array = JSON.parse(localStorage.getItem('array'));
+
+            document.getElementById("max_element_label").classList.add("group_label_show");
+            document.getElementById("max_element").classList.add("active_button");
+            document.getElementById('max_element').value = Math.max.apply(null, array);
+        }
+    }
+    elements_sum.onclick = function(){
+        if(localStorage.getItem('array') !== null) {
+            let array = JSON.parse(localStorage.getItem('array')),
+                sum = 0;
+
+            for (let element of array) {
+                sum += Number(element);
+            }
+            document.getElementById("elements_sum_label").classList.add("group_label_show");
+            document.getElementById("elements_sum").classList.add("active_button");
+            document.getElementById('elements_sum').value = sum;
+        }
+    }
+    mid_elements.onclick = function(){
+        if(localStorage.getItem('array') !== null) {
+            let array = JSON.parse(localStorage.getItem('array')),
+                sum = 0
+            ;
+            for (let element of array) {
+                sum += Number(element);
+            }
+            document.getElementById("mid_elements_label").classList.add("group_label_show");
+            document.getElementById("mid_elements").classList.add("active_button");
+            document.getElementById('mid_elements').value = Math.round((sum / array.length) * 1000) / 1000;
+        }
+    }
+    /* Управление слайдером */
+    function slide(checkBox){
+        let slideId = Number(checkBox.id - 1), content;
+
+        let slides = document.getElementsByClassName("slide");
+        for(let i = 0; i < slides.length; ++i) {
+            content = slides[i].getElementsByClassName("content");
+            if (i !== slideId) {
+                slides[i].classList.remove("left_slide");
+                if(content.length !== 0) { content[0].classList.remove("down_slide"); }
+            }
+            else {
+                slides[i].classList.add("left_slide");
+                if(i === 2){print_array();}
+                if(content.length !== 0) { content[0].classList.add("down_slide"); }
+            }
+        }
+    }
+
+    /*
+    * var n, s: longint;
+        begin
+         readln(s);
+     s := 2 * s; {лучше s := s shl 1;}
+     n := trunc(sqrt(s)); {можно, как планировалось, n := trunc(sqrt(s + 0.25) - 0.5);}
+     while n > 1 do
+      if (s mod n = 0) and odd(s div n - n)
+         then break
+        else dec(n);
+     writeln(n)
+end.
+    *
+    * */
+
+    /* Задание 1 */
+    function isEven(n) {
+        n = Number(n);
+        return n === 0 || !!(n && !(n%2));
+    }
+
+    function isOdd(n) {
+        return isEven(Number(n) + 1);
+    }
+
+    sqare_button.onclick = function() {
+        document.getElementById("output").style.display = "block";
+        let S = document.quadratic.A.value;
+        let N;
+        S = 2 * S;
+        N = Math.trunc(Math.sqrt(S));
+        while (N > 1){
+           if (S % N === 0 && isOdd((S / N) - N)){
+               break;
+           }
+           else{
+                --N;
+           }
+        }
+
+        document.getElementById('output').innerHTML = 'Максимальное количество чисел в разложении: ' + N;
+    }
+
+    /* Результаты опроса */
+    calc.onclick = function(){
+        var myform = this.form,
+            chbx = myform['precipitation[]'],
+            chbxSum = 0;
+        for(var i = 0; i < chbx.length; i++){
+            if(chbx[i].checked) {
+                chbxSum += +chbx[i].value;
+            }
+        }
+
+        document.getElementById("test_result_text").style.opacity = 1;
+        document.getElementById("test_result_out").style.opacity = 1;
+        myform.result.value = +myform.myname.value + +myform.street.value + chbxSum;
+    }
+
+    reset.onclick = function(){
+        document.getElementById("test_result_text").style.opacity = 0;
+        document.getElementById("test_result_out").style.opacity = 0;
+    }
+
+    /* Всплывающее окно идентификации */
+	function openForm() {
+		//document.getElementById("myForm").style.display = "block";
+        document.getElementById("darkness").style.display = "block";
+        document.getElementById("subcribe_button").style.opacity = "0";
+
+        document.getElementById("myForm").classList.toggle("show_dialog");
+	}
+
+	function closeForm() {
+		//document.getElementById("myForm").style.display = "none";
+        document.getElementById("darkness").style.display = "none";
+        document.getElementById("subcribe_button").style.opacity = "1";
+
+        document.getElementById("myForm").classList.toggle("show_dialog");
+	}
+
+    function sendForm() {
+        document.getElementById("header_menu").classList.add("down_slide");
+        document.getElementById("header_menu").classList.remove("up_slide");
+        document.getElementById("subcribe_button").style.opacity = "0";
+
+        localStorage.setItem('identificated', "1");
+    }
+
+
+    /* Скрытие меню для неидетифицированных */
+    window.onload = function(){
+        if(localStorage.getItem('identificated') !== null) {
+            document.getElementById("header_menu").classList.add("down_slide");
+            document.getElementById("header_menu").classList.remove("up_slide");
+            document.getElementById("subcribe_button").style.opacity = "0";
+        }
+        else{
+            //document.getElementById("header_menu").classList.remove("down_slide");
+            document.getElementById("header_menu").classList.add("up_slide");
+            document.getElementById("subcribe_button").style.opacity = "1";
+        }
+    }
+
+    /*window.onunload = function(){
+        localStorage.removeItem('identificated');
+    }*/
+</script>
+
+</body>
+</html>
